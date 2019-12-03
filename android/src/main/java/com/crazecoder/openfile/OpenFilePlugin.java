@@ -127,7 +127,7 @@ public class OpenFilePlugin implements MethodCallHandler
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             String packageName = context.getPackageName();
-            Uri uri = FileProvider.getUriForFile(context, packageName + ".fileProvider", new File(filePath));
+            Uri uri = FileProvider.getUriForFile(context, packageName + ".fileprovider", new File(filePath));
             intent.setDataAndType(uri, typeString);
         } else {
             intent.setDataAndType(Uri.fromFile(file), typeString);
